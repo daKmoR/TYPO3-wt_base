@@ -56,3 +56,6 @@ if (getenv('TYPO3_CONTEXT') == 'Development') {
 	$TYPO3_CONF_VARS['SYS']['displayErrors'] = '1';
 	$TYPO3_CONF_VARS['SYS']['sqlDebug'] = '0';
 }
+
+## Default TYPO3 settings ##########################################################################
+$typo_db_extTableDef_script = 'extTables.php';
