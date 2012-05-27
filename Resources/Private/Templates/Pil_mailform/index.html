@@ -1,0 +1,116 @@
+<!-- ###TMAIL_FORM### begin -->
+<form action="###FORM_URL###" method="post">
+	<fieldset>
+		<!-- ###HEADER_STD### begin -->
+		<p class="info">###_LL_LABEL_HEADER_STD###</p>
+		<!-- ###HEADER_STD### end -->
+		<!-- ###HEADER_ERR### begin -->
+		<p class="error">###_LL_LABEL_HEADER_ERR###</p>
+		<!-- ###HEADER_ERR### end -->
+		<dl class="clearfix">
+			<dt class="###FIRSTNAME_ERR###"><label for="tx_pilmailform_pi1-firstname">###_LL_LABEL_FIRSTNAME### ###FIRSTNAME_ERR_TXT###</label></dt>
+			<dd class="###FIRSTNAME_ERR###"><input type="text" class="input-text" name="tx_pilmailform_pi1[text][firstname]" id="tx_pilmailform_pi1-firstname" value="###FIRSTNAME_VAL###" /></dd>
+			<dt class="###LASTNAME_ERR###"><label for="tx_pilmailform_pi1-lastname">###_LL_LABEL_LASTNAME### ###LASTNAME_ERR_TXT###</label></dt>
+			<dd class="###LASTNAME_ERR###"><input type="text" class="input-text" name="tx_pilmailform_pi1[text][lastname]" id="tx_pilmailform_pi1-lastname" value="###LASTNAME_VAL###" /></dd>
+			
+			<dt class="###PHONE_ERR###"><label for="tx_pilmailform_pi1-phone">###_LL_LABEL_PHONE### ###PHONE_ERR_TXT###</label></dt>
+			<dd class="###PHONE_ERR###"><input type="text" class="input-text" name="tx_pilmailform_pi1[text][phone]" id="tx_pilmailform_pi1-phone" value="###PHONE_VAL###" /></dd>
+			<dt class="###EMAIL_ERR###"><label for="tx_pilmailform_pi1-email">###_LL_LABEL_EMAIL### ###EMAIL_ERR_TXT###</label></dt>
+			<dd class="###EMAIL_ERR###"><input type="text" class="input-text" name="tx_pilmailform_pi1[text][email]" id="tx_pilmailform_pi1-email" value="###EMAIL_VAL###" /></dd>
+			
+			<dt class="###SUBJECT_ERR###"><label for="tx_pilmailform_pi1-subject">###_LL_LABEL_SUBJECT### ###SUBJECT_ERR_TXT###</label></dt>
+			<dd class="###SUBJECT_ERR###"><input type="text" class="input-text" name="tx_pilmailform_pi1[text][subject]" id="tx_pilmailform_pi1-subject" value="###SUBJECT_VAL###" /></dd>
+			<dt class="###MESSAGE_ERR###"><label for="tx_pilmailform_pi1-message">###_LL_LABEL_MESSAGE### ###MESSAGE_ERR_TXT###</label></dt>
+			<dd class="###MESSAGE_ERR###"><textarea class="textarea" name="tx_pilmailform_pi1[textarea][message]" id="tx_pilmailform_pi1-message" cols="30" rows="7">###MESSAGE_VAL###</textarea></dd>
+		</dl>
+		<div class="submit">
+			<button type="submit" name="tx_pilmailform_pi1[submit]">###_LL_LABEL_SUBMIT###</button>
+		</div>
+	</fieldset>
+</form>
+<!-- ###TMAIL_FORM### end -->
+
+
+
+
+<!-- ###TMAIL_MAIL### begin -->
+Datum:      ###_DATE###
+Zeit:       ###_TIME###
+Seite:      ###_SITE###
+Pfad:       ###_PATH###
+IP:         ###_IP###
+
+# Vorname:  ###FIRSTNAME_VAL###
+# Nachname: ###LASTNAME_VAL###
+# Telefon:  ###PHONE_VAL###
+# E-Mail:   ###EMAIL_VAL###
+# Betreff:  ###SUBJECT_VAL###
+# Nachricht:
+###MESSAGE_VAL###
+<!-- ###TMAIL_MAIL### end -->
+
+
+
+
+<!-- ###TMAIL_THANKS### begin -->
+<h1>###_LL_LABEL_THANKS###</h1>
+<p>###_LL_TEXT_THANKS###</p>
+<!-- ###TMAIL_THANKS### end -->
+
+
+
+
+<!-- ###TMAIL_ERROR### begin -->
+<h1>###_LL_LABEL_ERROR###</h1>
+<p class="error">###_LL_TEXT_ERROR###</p>
+<!-- ###TMAIL_ERROR### end -->
+
+
+
+
+<!-- ###TMAIL_MAIL_USERCOPY### begin -->
+Hallo,
+
+Sie haben gerade unser Kontaktformular mit folgenden Daten abgeschickt:
+
+# Vorname:  ###FIRSTNAME_VAL###
+# Nachname: ###LASTNAME_VAL###
+# Telefon:  ###PHONE_VAL###
+# E-Mail:   ###EMAIL_VAL###
+# Betreff:  ###SUBJECT_VAL###
+# Nachricht:
+###MESSAGE_VAL###
+
+-- 
+CDG
+<!-- ###TMAIL_MAIL_USERCOPY### end -->
+
+<!-- ###TMAIL_MAIL_USERCOPY_HTML### begin -->
+<h3>Sie haben gerade unser Kontaktformular mit folgenden Daten abgeschickt</h3>
+<table cellspacing="1" cellpadding="4" style="background: #333333;">
+	<tr>
+		<td style="background: #336699; color: #ffffff; font-weight: bold;">Vorname</td>
+		<td style="background: #ffffff;">###FIRSTNAME_VAL###</td>
+	</tr>	
+	<tr>
+		<td style="background: #336699; color: #ffffff; font-weight: bold;">Nachname</td>
+		<td style="background: #ffffff;">###LASTNAME_VAL###</td>
+	</tr>
+	<tr>
+		<td style="background: #336699; color: #ffffff; font-weight: bold;">Telefon</td>
+		<td style="background: #ffffff;">###PHONE_VAL###</td>
+	</tr>
+	<tr>
+		<td style="background: #336699; color: #ffffff; font-weight: bold;">E-mail</td>
+		<td style="background: #ffffff;">###EMAIL_VAL###</td>
+	</tr>
+	<tr>
+		<td style="background: #336699; color: #ffffff; font-weight: bold;">Betreff</td>
+		<td style="background: #ffffff;">###SUBJECT_VAL###</td>
+	</tr>
+	<tr>
+		<td style="background: #336699; color: #ffffff; font-weight: bold;">Nachricht</td>
+		<td style="background: #ffffff;">###MESSAGE_VAL###</td>
+	</tr>
+</table>
+<!-- ###TMAIL_MAIL_USERCOPY_HTML### end -->
