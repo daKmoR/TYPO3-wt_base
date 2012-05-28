@@ -38,6 +38,13 @@ $TYPO3_CONF_VARS['BE']['allowDonateWindow'] = FALSE;
 
 // set required extensions
 $TYPO3_CONF_VARS['EXT']['requiredExt'] = 'css_styled_content,realurl,openid,wt_base';
+
+// UTF8filesystem by default
+$TYPO3_CONF_VARS['SYS']['UTF8filesystem'] = '1';
+
+// use php extensions for various charset conversion/processing functions
+$TYPO3_CONF_VARS['SYS']['t3lib_cs_utils'] = 'mbstring';
+$TYPO3_CONF_VARS['SYS']['t3lib_cs_convMethod'] = 'iconv';
 	
 ## Additional page settings for development-mode ###################################################
 if (is_file(PATH_typo3conf . 'ENABLE_INSTALL_TOOL')) {
