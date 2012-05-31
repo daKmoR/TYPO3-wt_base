@@ -66,7 +66,7 @@ page.includeCSS {
 	bootstrap = EXT:wt_base/Resources/Public/Bootstrap/css/bootstrap.css
 	# the responsive css is disabled by default
 	#bootstrapResponsive = EXT:wt_base/Resources/Public/Bootstrap/Css/bootstrap-responsive.css
-	screen = EXT:site_default/Resources/Public/css/screen.css
+	screen = EXT:site_default/Resources/Public/Css/screen.css
 }
 
 page.headerData {
