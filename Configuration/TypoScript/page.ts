@@ -1,3 +1,5 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/Gridelements/page.ts">
+
 # define default Language Label and Flag
 mod.SHARED {
 	defaultLanguageLabel = German
@@ -24,7 +26,19 @@ TCEFORM {
 #   }
 # }
 
-## new Content Element wizard ############################################################
+## Headings ########################################################################################
+# Rename Headings
+TCEFORM.tt_content.header_layout.altLabels.0 = Überschrift (pro Seite eine)
+TCEFORM.tt_content.header_layout.altLabels.2 = Zwischenüberschrift
+
+# Remove unneded Headings
+TCEFORM.tt_content.header_layout.removeItems = 1,3,4,5,6
+
+# set default Heading to <h2>
+mod.wizards.newContentElement.wizardItems.common.elements.text.tt_content_defValues.header_layout = 2
+mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.header_layout = 2
+
+## new Content Element wizard ######################################################################
 # use tabs
 mod.wizards.newContentElement.renderMode = tabs
 # only show text & textpic

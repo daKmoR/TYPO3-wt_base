@@ -1,8 +1,11 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/menus.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/Gridelements/setup.ts">
+
 ## Language ########################################################################################
 config {
 	# only append the language value if not the default language
 	linkVars = L(1)
-	# prevent creation of double linkVars www.page.com/index.php?id=12&L=1&L=1 
+	# prevent creation of double linkVars www.page.com/index.php?id=12&L=1&L=1
 	# is just a cosmetical fix
 	uniqueLinkVars = 1
 	sys_language_overlay = hideNonTranslated
@@ -86,7 +89,7 @@ config {
 }
 
 # remove link-targets
-config.extTarget = 
+config.extTarget =
 tt_content.uploads.20.linkProc.target =
 
 # "to top"-link
@@ -102,7 +105,7 @@ tt_content.stdWrap.innerWrap.cObject {
 
   70 = TEXT
   70.value = <div class="scrollBarVertical">|</div>
-	
+
   80 = TEXT
   80.value = <div class="scrollBarHorizontal">|</div>
 }
@@ -116,15 +119,15 @@ page.config {
 plugin.tx_indexedsearch {
 	search.rootPidList = 1
 	show.advancedSearchLink = 0
-	
+
 	_DEFAULT_PI_VARS.type = 1
 	_DEFAULT_PI_VARS.ext = 1
-	
+
 	show {
 		rules = 0
 		clearSearchBox = 0
 	}
-	
+
 	blind {
 		type = 1
 		defOp = 1
@@ -138,7 +141,7 @@ plugin.tx_indexedsearch {
 		results = 1
 		extResume = 1
 	}
-	
+
 	_DEFAULT_PI_VARS.lang = 0
 	_DEFAULT_PI_VARS.results = 10
 	_CSS_DEFAULT_STYLE >
@@ -175,12 +178,12 @@ tt_content.mailform.20 {
 page = PAGE
 page {
 	typeNum = 0
-	
+
 	bodyTag >
 	bodyTagCObject = TEXT
 	bodyTagCObject.field = uid
 	bodyTagCObject.wrap = <body id="pid|">
-	
+
 	10 = FLUIDTEMPLATE
 	10 {
 		file.stdWrap.cObject = CASE
@@ -252,13 +255,11 @@ tt_content.stdWrap.prepend.dataWrap >
 # NO csc-header
 lib.stdheader.stdWrap.dataWrap >
 
-# lightbox size 
+# lightbox size
 tt_content.image.20.1.imageLinkWrap {
 	width = 860m
 	height = 540m
 }
-
-<INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/menus.ts">
 
 ## Cache & Debug ###################################################################################
 # disable cache and concatenate if any typo3 be-user is logged in, otherwise remove debug-comments
