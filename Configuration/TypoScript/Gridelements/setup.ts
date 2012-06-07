@@ -7,16 +7,16 @@ tt_content.gridelements_pi1.20.10 {
 				# right column with "column number" 1
 				0 {
 					renderObj =< tt_content
-					wrap = <div class="col1">|</div>
+					wrap = <div class="span6">|</div>
 				}
 				# right column with "column number" 1
 				1 {
 					renderObj =< tt_content
-					wrap = <div class="col2">|</div>
+					wrap = <div class="span6">|</div>
 				}
 			}
 			# use any stdWrap properties to wrap the whole grid
-			wrap = <div class="colmask">|</div>
+			wrap = <div class="row-fluid">|</div>
 		}
 	}
 }
