@@ -67,7 +67,7 @@ page.meta {
 ## Default CSS #####################################################################################
 page.includeCSS {
 	bootstrap = EXT:wt_base/Resources/Public/Bootstrap/css/bootstrap.css
-	bootstrapResponsive = EXT:wt_base/Resources/Public/Bootstrap/Css/bootstrap-responsive.css
+	bootstrapResponsive = EXT:wt_base/Resources/Public/Bootstrap/css/bootstrap-responsive.css
 	screen = EXT:site_default/Resources/Public/Css/screen.css
 }
 
