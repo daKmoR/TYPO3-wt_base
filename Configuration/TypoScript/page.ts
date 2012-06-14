@@ -30,9 +30,10 @@ TCEFORM {
 # Rename Headings
 TCEFORM.tt_content.header_layout.altLabels.0 = Überschrift (pro Seite eine)
 TCEFORM.tt_content.header_layout.altLabels.2 = Zwischenüberschrift
+TCEFORM.tt_content.header_layout.altLabels.3 = Unterüberschrift
 
 # Remove unneded Headings
-TCEFORM.tt_content.header_layout.removeItems = 1,3,4,5,6
+TCEFORM.tt_content.header_layout.removeItems = 1,4,5,6
 
 # set default Heading to <h2>
 mod.wizards.newContentElement.wizardItems.common.elements.text.tt_content_defValues.header_layout = 2
