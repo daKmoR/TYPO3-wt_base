@@ -16,7 +16,7 @@ tt_content.gridelements_pi1.20.10 {
 				}
 			}
 			# use any stdWrap properties to wrap the whole grid
-			wrap = <div class="row-fluid">|</div>
+			wrap = <div class="FceTwoColumns row-fluid">|</div>
 		}
 	}
 }
