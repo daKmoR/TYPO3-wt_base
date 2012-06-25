@@ -38,6 +38,7 @@ TCEFORM.tt_content.header_layout.removeItems = 1,4,5,6
 # set default Heading to <h2>
 mod.wizards.newContentElement.wizardItems.common.elements.text.tt_content_defValues.header_layout = 2
 mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.header_layout = 2
+mod.wizards.newContentElement.wizardItems.common.elements.image.tt_content_defValues.header_layout = 2
 
 ## new Content Element wizard ######################################################################
 # use tabs
