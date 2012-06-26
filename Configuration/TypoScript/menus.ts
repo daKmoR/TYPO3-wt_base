@@ -21,29 +21,29 @@ menus.nestedList {
 			ATagParams = class="first" |*||*| class="last"
 			stdWrap.dataWrap = <span>|</span>
 		}
-		
+
 		ACT < .NO
 		ACT.ATagParams = class="active first" |*| class="active" |*| class="active last"
 		ACT.wrapItemAndSub = <li class="active first">|</li> |*| <li class="active">|</li> |*| <li class="active last">|</li>
-		
+
 		IFSUB < .NO
 		IFSUB.ATagParams = class="ifsub first" |*| class="ifsub" |*| class="ifsub last"
 		IFSUB.wrapItemAndSub = <li class="ifsub first">|</li> |*| <li class="ifsub">|</li> |*| <li class="ifsub last">|</li>
-		
+
 		ACTIFSUB < .NO
 		ACTIFSUB.ATagParams = class="active ifsub first" |*| class="active ifsub" |*| class="active ifsub last"
 		ACTIFSUB.wrapItemAndSub = <li class="active ifsub first">|</li> |*| <li class="active ifsub">|</li> |*| <li class="active ifsub last">|</li>
-		
+
 		CURIFSUB < .NO
 		CURIFSUB.ATagParams = class="active current ifsub first" |*| class="active current ifsub" |*| class="active current ifsub last"
 		CURIFSUB.wrapItemAndSub = <li class="active current ifsub first">|</li> |*| <li class="active current ifsub">|</li> |*| <li class="active current ifsub last">|</li>
-		
+
 		# CUR needs to be defined after CURIFSUB as otherwise the CURIFSUB won't be taken into account?
 		CUR < .NO
 		CUR.ATagParams = class="active current first" |*| class="active current" |*| class="active current last"
 		CUR.wrapItemAndSub = <li class="active current first">|</li> |*| <li class="active current">|</li> |*| <li class="active current last">|</li>
 	}
-	
+
 	2 < .1
 	2.wrap = <ul class="lvl2">|</ul>
 	3 < .1
@@ -60,7 +60,7 @@ menus.nestedListUid {
 	1.IFSUB.ATagParams.dataWrap = id="uid{field:uid}" title="{field:title}"
 	1.ACTIFSUB.ATagParams.dataWrap = id="uid{field:uid}" title="{field:title}"
 	1.CURIFSUB.ATagParams.dataWrap = id="uid{field:uid}" title="{field:title}"
-	
+
 	2 < .1
 	2.wrap = <ul class="lvl2">|</ul>
 	3 < .1
@@ -101,10 +101,10 @@ menus.activePath {
 		NO {
 			doNotShowLink = 1
 		}
-		
+
 		ACT < .NO
 		ACT.doNotShowLink = 0
-		
+
 		CUR < .ACT
 		CUR.ATagParams = class="current"
 	}
@@ -115,7 +115,7 @@ menus.activePath {
 menus.absoluteUrl = TEXT
 menus.absoluteUrl {
 	wrap = {$baseUrl} |
-	
+
 	typolink {
 		parameter.data = page : uid
 		returnLast = url
@@ -125,7 +125,7 @@ menus.absoluteUrl {
 ## Absolute URL Link ###############################################################################
 # returns absolute url (e.g. to frontpage): <a href="http://localhost/typo3/project/">http://localhost/typo3/project/</a>
 # temp < menus.absoluteUrlLink
-menus.absoluteUrlLink = COA 
+menus.absoluteUrlLink = COA
 menus.absoluteUrlLink {
 	10 = TEXT
 	10.value = <a href="
@@ -157,13 +157,13 @@ menus.simpleLinks {
 
 		CUR < .NO
 		CUR.ATagParams = class="active current first" |*| class="active current" |*| class="active current last"
-		
+
 		IFSUB < .NO
 		IFSUB.ATagParams = class="ifsub first" |*| class="ifsub" |*| class="ifsub last"
-		
+
 		ACTIFSUB < .NO
 		ACTIFSUB.ATagParams = class="active ifsub first" |*| class="active ifsub" |*| class="active ifsub last"
-		
+
 		CURIFSUB < .NO
 		CURIFSUB.ATagParams = class="active current ifsub first" |*| class="active current ifsub" |*| class="active current ifsub last"
 	}
@@ -181,7 +181,7 @@ menus.simpleLinksUid {
 	1.IFSUB.ATagParams.dataWrap = id="uid{field:uid}" title="{field:title}"
 	1.ACTIFSUB.ATagParams.dataWrap = id="uid{field:uid}" title="{field:title}"
 	1.CURIFSUB.ATagParams.dataWrap = id="uid{field:uid}" title="{field:title}"
-	
+
 	2 < .1
 	3 < .1
 	4 < .1
@@ -229,6 +229,7 @@ menus.breadcrumb {
 # set menus.language.1.NO.stdWrap.override = yourGerman || yourEnglish
 # set menus.language.1.ACT.stdWrap.override = yourGerman || yourEnglish
 # MODIFY IF YOU NEED MORE LANGUAGES
+# config.linkVars = L(1-2)
 # menus.language.special.value = 0,1,2
 # menus.language.1.NO.stdWrap.override = <span>German</span> || <span>English</span> || <span>Russian</span>
 # menus.language.1.ACT.stdWrap.override < menus.language.1.NO.stdWrap.override
@@ -252,7 +253,7 @@ menus.language {
 			# remove default link as there would be no GET params
 			doNotLinkIt = 1
 			# create new link with current GET params
-			stdWrap.typolink { 
+			stdWrap.typolink {
 				parameter.data = page:uid
 				additionalParams = &L=0 || &L=1
 				addQueryString = 1
@@ -265,7 +266,7 @@ menus.language {
 		ACT < .NO
 		ACT = 1
 		ACT {
-			stdWrap.typolink > 
+			stdWrap.typolink >
 			stdWrap.wrap = <span class="active german">|</span> || <span class="active english">|</span>
 		}
 	}
@@ -328,19 +329,19 @@ menus.language_switch {
 # </ul>
 menus.customImageMenu = HMENU
 menus.customImageMenu {
-	1 = GMENU 
+	1 = GMENU
 	1 {
 		wrap = <ul>|</ul>
 		noBlur = 1
-	
+
 		NO = 1
 		NO {
 			wrapItemAndSub = <li class="first">|</li> |*| <li>|</li> |*| <li class="last">|</li>
-			
+
 			altImgResource.import = uploads/media/
 			altImgResource.import.field = media
 			altImgResource.import.listNum = 0
-			
+
 			# fall back GIFBUILDER item, if no result from altImgResource:
 			XY = 125,25
 			backColor = #FFFFFF
@@ -350,31 +351,31 @@ menus.customImageMenu {
 			#10.fontFile = fileadmin/_projekt/fonts/tahoma.ttf
 			10.offset = 10,16
 		}
-		
+
 		ACT < .NO
 		ACT.wrapItemAndSub = <li class="active first">|</li> |*| <li class="active">|</li> |*| <li class="active last">|</li>
 		ACT.altImgResource.import.listNum = 1
-		
+
 		CUR < .NO
 		CUR.wrapItemAndSub = <li class="active current first">|</li> |*| <li class="active current">|</li> |*| <li class="active current last">|</li>
 		CUR.altImgResource.import.listNum = 1
-		
+
 		#IFSUB < .NO
 		#IFSUB.wrapItemAndSub = <li class="ifsub first">|</li> |*| <li class="ifsub">|</li> |*| <li class="ifsub last">|</li>
-		
+
 		#ACTIFSUB < .NO
 		#ACTIFSUB.wrapItemAndSub = <li class="active ifsub first">|</li> |*| <li class="active ifsub">|</li> |*| <li class="active ifsub last">|</li>
-		
+
 		#CURIFSUB < .NO
 		#CURIFSUB.wrapItemAndSub = <li class="active current ifsub first">|</li> |*| <li class="active current ifsub">|</li> |*| <li class="active current ifsub last">|</li>
-		
+
 		RO < .NO
 		RO.altImgResource.import.listNum = 1
-		
+
 	}
 	2 < .1
 	3 < .1
-	
+
 	1.ACT.altImgResource.import.listNum = 2
 	1.CUR.altImgResource.import.listNum = 2
 }
@@ -394,15 +395,15 @@ menus.jumpMenu {
 	10 = COA
 	10 {
 		wrap = <form class="jumpmenu" action="#" method="get"><fieldset><select name="jumpmenu">|</select></fieldset></form>
-		
+
 		10 = TEXT
 		10 {
 			wrap = <option value="">|</option>
-			
+
 			value = bitte ausw&auml;hlen
 			lang.en = please select
 		}
-		
+
 		20 = HMENU
 		20 {
 			1 = TMENU
@@ -415,21 +416,21 @@ menus.jumpMenu {
 						10 = COA
 						10 {
 							wrap = <option value="|">
-							
+
 							10 = TEXT
 							10.typolink.parameter.field = uid
 							10.typolink.returnLast = url
 						}
-						
+
 						20 = TEXT
 						20 {
 							wrap = |</option>
-							
+
 							field = title
 						}
 					}
 				}
-				
+
 				CUR < .NO
 				CUR.stdWrap.cObject.10.wrap = <option value="|" selected="selected">
 			}
