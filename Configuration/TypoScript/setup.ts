@@ -184,15 +184,15 @@ page {
 		10 = TEXT
 		10.value = <body
 		10.noTrimWrap = || |
-		
+
 		20 < .10
 		20.field = uid
 		20.wrap = id="pid|"
-		
+
 		40 = TEXT
 		40.value = >
 	}
-	
+
 	10 = FLUIDTEMPLATE
 	10 {
 		file.stdWrap.cObject = CASE
@@ -211,6 +211,7 @@ page {
 			4 = TEXT
 			4.value = EXT:site_default/Resources/Private/Templates/Page/TwoColumns.html
 		}
+		partialRootPath = EXT:site_default/Resources/Private/Partials/
 	}
 }
 
