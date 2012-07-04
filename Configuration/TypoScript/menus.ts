@@ -12,13 +12,13 @@ menus.nestedList = HMENU
 menus.nestedList {
 	1 = TMENU
 	1 {
-		wrap = <ul class="lvl1">|</ul>
+		wrap = <ul class="lvl1 nav">|</ul>
 		noBlur = 1
 
 		NO = 1
 		NO {
 			wrapItemAndSub = <li class="first">|</li> |*| <li>|</li> |*| <li class="last">|</li>
-			ATagParams = class="first" |*||*| class="last"
+			ATagParams = class="first" |*| |*| class="last"
 			stdWrap.dataWrap = <span>|</span>
 		}
 
@@ -28,15 +28,15 @@ menus.nestedList {
 
 		IFSUB < .NO
 		IFSUB.ATagParams = class="ifsub first" |*| class="ifsub" |*| class="ifsub last"
-		IFSUB.wrapItemAndSub = <li class="ifsub first">|</li> |*| <li class="ifsub">|</li> |*| <li class="ifsub last">|</li>
+		IFSUB.wrapItemAndSub = <li class="ifsub dropdown first">|</li> |*| <li class="ifsub dropdown">|</li> |*| <li class="ifsub dropdown last">|</li>
 
 		ACTIFSUB < .NO
 		ACTIFSUB.ATagParams = class="active ifsub first" |*| class="active ifsub" |*| class="active ifsub last"
-		ACTIFSUB.wrapItemAndSub = <li class="active ifsub first">|</li> |*| <li class="active ifsub">|</li> |*| <li class="active ifsub last">|</li>
+		ACTIFSUB.wrapItemAndSub = <li class="active ifsub dropdown first">|</li> |*| <li class="active ifsub dropdown">|</li> |*| <li class="active ifsub dropdown last">|</li>
 
 		CURIFSUB < .NO
 		CURIFSUB.ATagParams = class="active current ifsub first" |*| class="active current ifsub" |*| class="active current ifsub last"
-		CURIFSUB.wrapItemAndSub = <li class="active current ifsub first">|</li> |*| <li class="active current ifsub">|</li> |*| <li class="active current ifsub last">|</li>
+		CURIFSUB.wrapItemAndSub = <li class="active current ifsub dropdown first">|</li> |*| <li class="active current ifsub dropdown">|</li> |*| <li class="active current ifsub dropdown last">|</li>
 
 		# CUR needs to be defined after CURIFSUB as otherwise the CURIFSUB won't be taken into account?
 		CUR < .NO
@@ -45,7 +45,7 @@ menus.nestedList {
 	}
 
 	2 < .1
-	2.wrap = <ul class="lvl2">|</ul>
+	2.wrap = <ul class="lvl2 dropdown-menu">|</ul>
 	3 < .1
 	3.wrap = <ul class="lvl3">|</ul>
 	4 < .1
@@ -364,7 +364,7 @@ menus.customImageMenu {
 		#IFSUB.wrapItemAndSub = <li class="ifsub first">|</li> |*| <li class="ifsub">|</li> |*| <li class="ifsub last">|</li>
 
 		#ACTIFSUB < .NO
-		#ACTIFSUB.wrapItemAndSub = <li class="active ifsub first">|</li> |*| <li class="active ifsub">|</li> |*| <li class="active ifsub last">|</li>
+		#ACTIFSUB.wrapItemAndSub = <li class="active ifsub dropdown first">|</li> |*| <li class="active ifsub dropdown">|</li> |*| <li class="active ifsub dropdown last">|</li>
 
 		#CURIFSUB < .NO
 		#CURIFSUB.wrapItemAndSub = <li class="active current ifsub first">|</li> |*| <li class="active current ifsub">|</li> |*| <li class="active current ifsub last">|</li>
