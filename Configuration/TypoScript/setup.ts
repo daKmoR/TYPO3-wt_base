@@ -210,6 +210,10 @@ page {
 			3.value = EXT:site_default/Resources/Private/Templates/Page/OneColumn.html
 			4 = TEXT
 			4.value = EXT:site_default/Resources/Private/Templates/Page/TwoColumns.html
+			5 = TEXT
+			5.value = EXT:site_default/Resources/Private/Templates/Page/ThreeColumns.html
+			6 = TEXT
+			6.value = EXT:site_default/Resources/Private/Templates/Page/OneColumn.html
 		}
 		partialRootPath = EXT:site_default/Resources/Private/Partials/
 	}
