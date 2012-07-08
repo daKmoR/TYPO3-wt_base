@@ -226,20 +226,24 @@ lib.leftContent = COA
 lib.leftContent {
 	50 < styles.content.get
 	50.select.where = colPos = 2
+	990 = TEXT
+	990.value = &#xA0;
 }
 
 lib.content = COA
 lib.content {
 	50 < styles.content.get
 	50.select.where = colPos = 1
-	110 = TEXT
-	110.value = &#xA0;
+	990 = TEXT
+	990.value = &#xA0;
 }
 
 lib.rightContent = COA
 lib.rightContent {
 	50 < styles.content.get
 	50.select.where = colPos = 3
+	990 = TEXT
+	990.value = &#xA0;
 }
 
 lib.footer = COA
