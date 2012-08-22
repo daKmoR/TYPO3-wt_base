@@ -45,7 +45,7 @@ $TYPO3_CONF_VARS['SYS']['UTF8filesystem'] = '1';
 // use php extensions for various charset conversion/processing functions
 $TYPO3_CONF_VARS['SYS']['t3lib_cs_utils'] = 'mbstring';
 $TYPO3_CONF_VARS['SYS']['t3lib_cs_convMethod'] = 'iconv';
-	
+
 ## Additional page settings for development-mode ###################################################
 if (is_file(PATH_typo3conf . 'ENABLE_INSTALL_TOOL')) {
 	$TYPO3_CONF_VARS['BE']['installToolPassword'] = '49fd0da71f9468b4b7f7d25fcfa4d7d2';
@@ -53,6 +53,7 @@ if (is_file(PATH_typo3conf . 'ENABLE_INSTALL_TOOL')) {
 
 if (getenv('TYPO3_CONTEXT') == 'Development') {
 	// Default password is "joh316" :
+	$TYPO3_CONF_VARS['FE']['versionNumberInFilename'] = '';
 	$TYPO3_CONF_VARS['BE']['installToolPassword'] = 'bacb98acf97e0b6112b1d1b650b84971';
 	$TYPO3_CONF_VARS['BE']['lockIP'] = '0';
 	$TYPO3_CONF_VARS['BE']['sessionTimeout'] = '86400';
