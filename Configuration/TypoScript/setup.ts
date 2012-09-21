@@ -214,6 +214,8 @@ page {
 			5.value = EXT:site_default/Resources/Private/Templates/Page/ThreeColumns.html
 			6 = TEXT
 			6.value = EXT:site_default/Resources/Private/Templates/Page/OneColumn.html
+			7 = TEXT
+			7.value = EXT:site_default/Resources/Private/Templates/Page/Home.html
 		}
 		partialRootPath = EXT:site_default/Resources/Private/Partials/
 	}
