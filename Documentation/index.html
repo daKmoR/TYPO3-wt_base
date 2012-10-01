@@ -1,0 +1,670 @@
+<!doctype html>  
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>fdummy</title>
+
+    <meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+    <link rel="stylesheet" href="lib/zenburn.css">
+  </head>
+  
+  <body>
+    
+    <div id="reveal">
+
+      <!-- Used to fade in a background when a specific slide state is reached -->
+      <div class="state-background"></div>
+      
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>fdummy for TYPO3</h1>
+          <h3 class="inverted">a TYPO3 Workflow</h3>
+					<br /> <br />
+					<p style="color: rgba(0,0,0,0.3); text-shadow: none;"><small>next slide with right arrow</small></p>
+					<p style="color: rgba(0,0,0,0.3); text-shadow: none;"><small>more in depth information with down arrow (if available)</small></p>
+          <script>
+            // Delicously hacky. Look away.
+            if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+          </script>
+        </section>
+        
+        <section>
+          <h2>Points</h2>
+          <ol>
+            <li><a href="#/2">Best Pratice</a></li>
+            <li><a href="#/3">Git submodules (typo3_src, EXT:...)</a></li>
+            <li><a href="#/4">Working with fdummy</a></li>
+            <li><a href="#/5">EXT: site_&lt;domain&gt; [site specific]</a></li>
+            <li><a href="#/6">Deployment with TYPO3.Surf</a></li>
+            <li><a href="#/7">For CSS the Twitter BootStrap Framework is used</a></li>
+            <li><a href="#/8">MooTools Behaviors</a></li>
+						
+            <li><a href="#/9">Fluidtemplate replaces Templavoila</a></li>
+            <li><a href="#/10">EXT: wt_base [common configuration]</a></li>
+          </ol>
+        </section>
+				
+				<section>
+					<section>
+						<h2>TYPO3 Best Pratice</h2>
+						<ul>
+							<li>EVERY TYPO3 Projects MUST have a
+								<ul>
+									<li>git repository</li>
+									<li>dev version on clients.webteam.at</li>
+									<li>uses TYPO3.Surf deployment from deploy.webteam.at</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>TYPO3 Best Pratice</h2>
+						<ul>
+							<li>prefer domain.com over www.domain.com (shorter version)</li>
+							<li>git config core.filemode false</li>
+							<li>beschta.at => beschtaat.clients.webteam.at</li>
+						</ul>
+					</section>
+        </section>
+				
+        <section>
+          <section>
+            <h2>Git submodules</h2>
+            <p>The following pathes are currently included via submodules and each of them may have submodules too</p>
+            <ul>
+              <li>typo3_src</li>
+              <li>EXT: wt_base</li>
+              <li>EXT: tinymce_rte</li>
+              <li>EXT: mootools_essentials</li>
+              <li>EXT: mootools_stack</li>
+            </ul>
+            <p>Therefore you have to get them too</p>
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;"># after every
+$ git clone ...
+$ git pull
+$ git merge
+$ git rebase
+
+# you have to update the submodules as they may have changed
+$ git submodule update --init --recursive
+            </pre></code>
+            
+          </section>
+          
+          <section>
+            <h2>TYPO3 Core</h2>
+						<p>update with script</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">$ updateTYPO3.sh 4-7-1
+						</pre></code>
+            <p>do it manually</p>
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;"># try with any TYPO3 Core
+$ cd typo3_src
+$ git fetch
+# if the tag is not available do a "git fetch --tags"
+$ git checkout tags/TYPO3_4-7-1
+$ git submodule update --init --recursive
+
+# once you have to TYPO3 Version you want you have to update the pointer in the main repository
+$ cd ..
+$ git add typo3_src
+$ git commit -m 'Raise Submodule Pointer of typo3_src to 4-7-1'
+            </pre></code>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h2>Working with fdummy</h2>
+            <ol>
+              <li>Checkout files</li>
+              <li>local host, vhost</li>
+							<li>DEV clients vHost (<a href="https://clients.webteam.at:10000">https://clients.webteam.at:10000</a>)</li>
+							<li>Git repository (<a href="http://git.webteam.at">http://git.webteam.at</a>)</li>
+							<li>Deployment</li>
+            <ol>
+          </section>
+					<section>
+						<h2>Quickstart</h2>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">$ newTYPO3v6.sh shopCom
+# hosts
+127.0.0.1       local.webteam.at
+# Apache vHost
+&lt;VirtualHost *:80&gt;
+	DocumentRoot "path/to/web/root/webteamAt"
+	ServerName local.webteam.at
+	SetEnv TYPO3_CONTEXT Development
+&lt;/VirtualHost&gt;
+## configure host if needed
+$ mv typo3conf/ext/hostconf.php.sample typo3conf/ext/hostconf.php
+$ vi typo3conf/ext/hostconf.php
+## => working local.webteam.at
+
+# create git repository at http://git.webteam.at 
+# Name: webteamat
+$ git commit -m '[TASK] Initial Commit'
+$ git push -u origin master
+
+# create clients vHost at https://clients.webteam.at:10000
+# Domain name: webteamat.clients.webteam.at
+# PW: xxxxxxxx
+# Change "Server Configuration" -> "Website Options" -> "Website documents sub-directory"
+# from "public_html" to releases/current
+
+# deployment
+$ mv Build/Surf/UseMe.php Build/Surf/webteamatClientsWebteamAt.php
+$ mv Build/Surf/UseMe Build/Surf/webteamatClientsWebteamAt
+# and edit these files with real username, password, path...
+# copy to deploy.clients.webteam.at
+$ mv deploy.sh.sample deployClients.sh
+# adopt deploy name
+# maybe adopt and use pushDb.sh.sample and/or getDb.sh.sample
+						</pre></code>
+					</section>
+          <section>
+            <h2>Create a Working Copy</h2>
+						<p>with a script</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">$ checkoutTYPO3v6.sh shopCom h5hk3j3
+## copy script to the web root!
+# clones repository recursively
+# create folders, symlinks
+# copies database of shopCom
+						</pre></code>
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
+## examle for shop.com
+$ cd path/to/webroot
+$ git clone git@git.webteam.at:clients/shopcom.git shopCom
+$ cd shopCom
+$ git submodule update --init --recursive
+## create needed folders
+$ mkdir fileadmin
+$ mkdir fileadmin/user_upload
+$ mkdir fileadmin/_temp_
+$ mkdir uploads
+$ mkdir uploads/pics
+$ mkdir uploads/media
+$ mkdir uploads/tf
+$ mkdir typo3temp
+$ ln -s typo3_src/typo3
+$ ln -s typo3_src/t3lib
+$ ln -s typo3_src/index.php
+# change git remote
+$ git remote rename origin fdummy
+$ git remote add origin git@git.webteam.at:clients/$nameLowerCase.git
+## configure host if needed
+$ mv typo3conf/ext/hostconf.php.sample typo3conf/ext/hostconf.php
+$ vi typo3conf/ext/hostconf.php
+## get DB from shopCom
+              </code></pre>
+          </section>
+          <section>
+            <h2>Create a new Project</h2>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">$ newTYPO3v6.sh shopCom
+## copy script to the web root and set fdummy password on line 5!
+# clones repository recursively
+# create folders, symlinks
+# copies database from fdummy to webteamat
+						</pre></code>						
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
+## examle for webteam.at
+$ cd path/to/webroot
+$ git clone git@git.webteam.at:webteam-interne-projekte/fdummy.git webteamAt
+$ cd webteamAt
+$ git submodule update --init --recursive
+## create needed folders
+$ mkdir fileadmin
+$ mkdir fileadmin/user_upload
+$ mkdir fileadmin/_temp_
+$ mkdir uploads
+$ mkdir uploads/pics
+$ mkdir uploads/media
+$ mkdir uploads/tf
+$ mkdir typo3temp
+$ ln -s typo3_src/typo3
+$ ln -s typo3_src/t3lib
+$ ln -s typo3_src/index.php
+## configure host if needed
+$ mv typo3conf/ext/hostconf.php.example typo3conf/ext/hostconf.php
+$ vi typo3conf/ext/hostconf.php
+## create git repository at http://git.webteam.at
+# change git remote
+$ git remote rename origin fdummy
+$ git remote add origin git@git.webteam.at:clients/$nameLowerCase.git
+$ git push -u origin master
+              </code></pre>
+          </section>
+          <section>
+            <h2>Local Server</h2>
+						<p>hosts entry (Linux: /etc/hosts; Windows: Windows\System32\drivers\etc\hosts)</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">127.0.0.1       local.webteam.at
+						</pre></code>
+						<p>Apache vHost (httpd-vhost.conf, symlinks available hosts, httpd.conf, ...)</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">&lt;VirtualHost *:80&gt;
+	DocumentRoot "path/to/web/root/webteamAt"
+	ServerName local.webteam.at
+	SetEnv TYPO3_CONTEXT Development
+&lt;/VirtualHost&gt;
+						</pre></code>
+          </section>
+        </section>
+				
+        <section>
+          <section>
+            <h2>EXT: site_&lt;domain&gt;</h2>
+            <p>Holds all Configuration for a specific site (domain)</p>
+            <p>Is basically what we had at fileadmin/templates/default</p>
+            <p>The domain is in lowerCamelCase and before each Uppercase-Letter is a "."</p>
+            <p>Examples:</p>
+            <ul>
+              <li>site_webteamAt => webteam.at</li>
+              <li>site_clientsWebteamAt => clients.webteam.at</li>
+            </ul>
+						<p>if you just have ONE domain you can leave the folder as site_default</p>
+          </section>
+          
+          <section>
+            <h2>Templates</h2>
+            <p>are in <code>Resources\Private\Templates\Page</code></p>
+            <p>They look something like this: (One Column)</p>
+            <pre><xmp><div id="wrap" class="container">
+
+	<f:render partial="Header" />
+
+	<div class="row">
+		<div class="span4">
+			<f:cObject typoscriptObjectPath="lib.leftMenu" />
+			<f:cObject typoscriptObjectPath="lib.leftContent" />
+		</div>
+
+		<div class="span8">
+			<div id="content">
+				<f:cObject typoscriptObjectPath="lib.content" />
+			</div>
+		</div>
+	</div>
+
+	<f:render partial="Footer" />
+
+</div> <!-- /wrap --></xmp></pre>
+          </section>
+        </section>
+				
+        <section>
+          <section>
+            <h2>Deployment Requirements</h2>
+            <ul>
+              <li>Does not require additional Stuff besided TYPO3 Requirements (so php based or remote server)</li>
+              <li>Supports Git Submodules</li>
+              <li>NO manual installation steps required on the Server
+								<ul>
+									<li>Creates all needed folders automatically</li>
+									<li>(sym)links all neded TYPO3 folders</li>
+								</ul>
+							</li>
+							<li>Different TYPO3 Versions for different Releases</li>
+							<li>can require ssh, but not a public key on the server</li>
+							<li>Works with rsync</li>
+							<li>Deployment to Multiple Server</li>
+            </ul>
+						<h3>Deployment nice to have</h3>
+						<ul>
+							<li>deployment without the need to checkout the whole project</li>
+							<li>deployment via webinterface (for example only for the project manager)</li>
+							<li>get changes to the system easily for all projects</li>
+						</ul>
+          </section>
+				
+          <section>
+            <h2>Deployment with TYPO3.Surf</h2>
+            <ul>
+              <li>TYPO3.Surf is a FLOW3 Package</li>
+              <li>It can be used to deploy various Applications</p>
+              <li>You require an ssh login to the server (can be passless but not required)</li>
+              <li>Currently supports git or rsync to deploy to the Server</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2>Using deploy.clients.webteam.at</h2>
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
+$ ssh deploy@clients.webteam.at
+$ cd public_html
+$ ./flow3 surf:deploy webteamAt
+$ ./flow3 surf:deploy webteamatClientsWebteamAt
+$ ./flow3 surf:deploy cdgAcAt
+$ ./flow3 surf:deploy cdgacatClientsWebteamAt
+
+# if you just want to see what would happen
+$ ./flow3 surf:simulate webteamAt
+            </code></pre>
+          </section>
+          
+          <section>
+            <h2>Created Structure</h2>
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
+releases/previous -> previous release
+releases/current -> latest release
+releases/&lt;sha&gt;/fileadmin -> shared/fileadmin
+releases/&lt;sha&gt;/typo3temp -> shared/typo3temp
+releases/&lt;sha&gt;/uploads -> shared/uploads
+releases/&lt;sha&gt;/* (files checkt out from the repository)
+shared/fileadmin
+shared/typo3temp
+shared/uploads
+.cache/&lt;deploymentName&gt;/ (for rsync or git)
+            </pre></code>
+            <p>As you can see the fileadmin must not be in the git repository, only client data is allowed there.</p>
+          </section>
+					
+					<section>
+						<h2>Example</h2>
+						<pre><xmp>
+	$workflow = new \TYPO3\Surf\Domain\Model\SimpleWorkflow();
+	$deployment->setWorkflow($workflow);
+
+	$node = new \TYPO3\Surf\Domain\Model\Node('fdummy');
+	$node->setHostname('fdummy.clients.webteam.at');
+	$node->setOption('username', 'fdummy');
+	$node->setOption('password', 'pwd');
+
+	$application = new \TYPO3\Surf\Application\TYPO3v6();
+	$application->setDeploymentPath('/home/fdummy/public_html');
+	$application->setOption('repositoryUrl', 'git://git.webteam.at/webteam-interne-projekte/fdummy.git');
+	$application->setOption('transferMethod', 'rsync');
+	$application->setOption('keepReleases', 2);
+	$application->addNode($node);
+
+	$deployment->addApplication($application);						
+						</xmp></pre>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h2>CSS BootStrap</h2>
+            <p>
+              The basic templates now relay on Twitter BootStrap. You can find more information
+              on there webpage <a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a>.
+            </p>
+          </section>
+        </section>
+				
+        <section>
+          <section>
+            <h2>MooTools Behavior</h2>
+            <ul>
+              <li>is available by default</li>
+              <li>is only included if needed</li>
+              <li>use JavaScript without writing it</li>
+              <li>can be used with Fluid in BE and FE</li>
+              <li>with TS in FE</li>
+            </ul>
+          </section>
+					
+					<section>
+						<p>data-behavior="..."</p>
+						<small>used to apply behaviors for an element... </small><br />
+						<small>something like: </small>
+						<br />
+						<ul>
+							<li>slideshow</li>
+							<li>lightbox</li>
+							<li>google maps</li>
+							<li>adjusting/caluclating styles</li>
+							<li>...</li>
+						</ul>
+						<br /><br />
+						<p>these Behaviors are usually called once on Startup.</p>
+					</section>
+					
+					<section>
+						<p>data-trigger="..."</p>
+						<small>These triggers are called usually if the elemet is clicked. It mostly modifies something like</small>
+						<br />
+						<ul>
+							<li>starting a gallery</li>
+							<li>next image on a gallery</li>
+							<li>opening or closing a lightbox</li>
+							<li>add/remove a css class</li>
+							<li>modify calculate a style of another element</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Providing Options</h2>
+						<pre><xmp>
+# option name = "myoption"
+<div data-behavior="myBehavior" data-mybehavior-myoption="aString">
+<div data-behavior="myBehavior" data-mybehavior-myoption="[12,13]">
+
+# all options
+<div data-behavior="myBehavior" data-mybehavior-options="{myoption: 'aString', whatever: [12, 13]}">
+						</xmp></pre>
+					</section>
+          
+          <section>
+            <h2>Fluid Google Maps</h2>
+            <pre style="font-size: 12px;"><xmp>
+{namespace m=Tx_MootoolsEssentials_ViewHelpers}
+
+<m:load file="MooGooMaps/Behavior.Map.Marker" />
+<div id="map">
+  <div data-behavior="Map" style="width: 400px; height: 500px;" data-map-center="[48.211648, 16.367784]"></div>
+  <div style="display: none;">
+    <div data-behavior="Map.Marker" data-map-marker-position="[48.211648, 16.367784]">
+      <h2>Awesome Company</h2>
+      <p>it's all you need</p>
+    </div>
+  </div>
+</div>
+            </xmp></pre>
+          </section>
+          
+          <section>
+            <h2>Fluid Slide</h2>
+            <pre style="font-size: 12px;"><xmp>
+{namespace m=Tx_MootoolsEssentials_ViewHelpers}
+          
+<m:load file="Slide/Behavior.Slide.Element" />
+<div id="slide">
+  <a data-trigger="Slide.next">next</a>
+  <a data-trigger="Slide.stop">stop</a>
+  <div data-behavior="Slide">
+    <img data-behavior="Slide.Element" src="fileadmin/small-sevenSisters.jpg" width="120" height="160" alt="bla" />
+    <img data-behavior="Slide.Element" src="fileadmin/small-stone.jpg" width="107" height="160" alt="bla" />
+    <img data-behavior="Slide.Element" src="fileadmin/small-sun.jpg" width="160" height="107" alt="bla" />
+    <img data-behavior="Slide.Element" data-slide-element-isstartelement="true" src="fileadmin/small-water.jpg" width="160" height="120" alt="bla" />
+  </div>
+</div>
+            </xmp></pre>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h2>FluidTemplate replaces Templavoila</h2>
+            <p>TemplaVoila can still be used but for new projects use FluidTemplates as it's</p>
+            <ul>
+              <li>easier to maintain</li>
+              <li>reflects template changes immmediately</li>
+            </ul>
+            <br />
+            <br />
+            <h4>this basically means</h4>
+            <ul>
+              <li>use viewhelpers</li>
+              <li>modifying templates for html changes (not TS)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use it</h2>
+            <p>{namespace m=Tx_MootoolsEssentials_ViewHelpers}</p>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h2>EXT: wt_base</h2>
+            <p>holds all the common configuration</p>
+            <p>you get:</p>
+            <ul>
+              <li>CSS/JS will be concatenated (unless a BE user is logged in)</li>
+              <li>bodytag with uid => <code>&lt;body id="pid12"&gt;</code>
+              <li>3 templates - with one, two, three columns</li>
+              <li>default CSS with bootstrap</li>
+              <li>multilanguage</li>
+              <li>menus :p</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Include it</h2>
+            <pre><xmp><INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/setup.ts">
+# if you need multilanguage uncomment the following line
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/setup.multilanguage.ts">
+# if english is your second language (most common case) uncomment the following line
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:wt_base/Configuration/TypoScript/setup.english.ts"></xmp></pre>
+          </section>
+          <section>
+            <h2>Default Ts Elements</h2>
+            <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">lib.header = COA
+lib.header {
+  50 < styles.content.get
+  50.select.where = colPos = 4
+}
+
+lib.leftContent = COA
+lib.leftContent {
+  50 < styles.content.get
+  50.select.where = colPos = 2
+}
+
+lib.content = COA
+lib.content {
+  50 < styles.content.get
+  50.select.where = colPos = 1
+  110 = TEXT
+  110.value = &#xA0;
+}
+
+lib.rightContent = COA
+lib.rightContent {
+  50 < styles.content.get
+  50.select.where = colPos = 3
+}
+
+lib.footer = COA
+lib.footer {
+  50 < styles.content.get
+  50.select.where = colPos = 5
+}            </code></pre>            
+          </section>
+          
+          <section>
+            <h2>Menues</h2>
+            <ul style="font-size: 20px; line-height: 1.5;">
+              <li>menus.nestedList</li>
+              <li>menus.nestedListUid</li>
+              <li>menus.nestedListAll</li>
+              <li>menus.nestedListUidAll</li>
+              <li>menus.activePath</li>
+              <li>menus.absoluteUrl</li>
+              <li>menus.absoluteUrlLink</li>
+              <li>menus.simpleLinks</li>
+              <li>menus.simpleLinksUid</li>
+              <li>menus.footer</li>
+              <li>menus.breadcrumb</li>
+              <li>menus.language</li>
+              <li>menus.language_switch</li>
+              <li>menus.customImageMenu</li>
+              <li>menus.jumpMenu</li>
+            </ul>
+          </section>
+        </section>
+        
+        <section>
+          <h1>THE END</h1>
+          <h3 class="inverted">BY Thomas Allmer</h3>
+        </section>
+      </div>
+
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+      
+    </div>
+    
+    <script src="js/reveal.js"></script>
+
+    <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/highlight.js"></script>
+    <script src="lib/classList.js"></script>
+    
+    <script>
+      // Parse the query string into a key/value object
+      var query = {};
+      location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+        query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+      } );
+
+      // Fires when a slide with data-state=customevent is activated
+      Reveal.addEventListener( 'customevent', function() {
+        alert( '"customevent" has fired' );
+      } );
+
+      // Fires each time a new slide is activated
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        // event.indexh & event.indexv
+      } );
+
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // If true; each slide will be pushed to the browser history
+        history: true,
+
+        // Loops the presentation, defaults to false
+        loop: false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel: true,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks: true,
+
+        // UI style
+        theme: query.theme || 'default', // default/neon
+
+        // Transition style
+        transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+      });
+
+      hljs.initHighlightingOnLoad();
+    </script>
+
+  </body>
+</html>
