@@ -6,6 +6,11 @@ mod.SHARED {
 	defaultLanguageFlag = at
 }
 
+RTE.default.init {
+	# define a stylesheet
+	content_css = typo3conf/ext/site_default/Resources/Public/Css/Screen.css
+}
+
 ## Frame ###########################################################################################
 TCEFORM {
   tt_content {
