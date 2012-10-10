@@ -12,16 +12,9 @@ RTE.default.init {
 }
 
 ## Frame ###########################################################################################
-TCEFORM {
-  tt_content {
-    section_frame {
-      removeItems = 1,5,6,10,11,12,20,21
-      addItems.50 = Box
-      addItems.60 = ScrollBar Both
-      addItems.70 = ScrollBar Vertical
-      addItems.80 = ScrollBar Horizontal
-    }
-  }
+TCEFORM.tt_content.section_frame {
+	removeItems = 1,5,6,10,11,12,20,21
+	addItems.50 = Box
 }
 # set in setupTS
 # tt_content.stdWrap.innerWrap.cObject {
