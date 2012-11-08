@@ -98,15 +98,6 @@ tt_content.stdWrap.innerWrap2 = | <a class="totop" href="#">&#9650; nach oben</a
 tt_content.stdWrap.innerWrap.cObject {
   50 = TEXT
   50.value = <div class="box">|</div>
-
-  60 = TEXT
-  60.value = <div class="scrollBarBoth">|</div>
-
-  70 = TEXT
-  70.value = <div class="scrollBarVertical">|</div>
-
-  80 = TEXT
-  80.value = <div class="scrollBarHorizontal">|</div>
 }
 
 ## Indexed Search ##################################################################################
