@@ -11,11 +11,11 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Base Installation for WEBTEAM GmbH',
+	'title' => 'Base Installation',
 	'description' => 'Base',
 	'category' => 'misc',
 	'author' => 'Thomas Allmer',
-	'author_email' => 'at@delusionworld.com',
+	'author_email' => 'd4kmor@gmail.com',
 	'shy' => '',
 	'dependencies' => '',
 	'conflicts' => '',
