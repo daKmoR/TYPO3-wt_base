@@ -11,11 +11,11 @@ RTE.default.init {
 	content_css = typo3conf/ext/site_default/Resources/Public/Css/Screen.css
 }
 
-## Frame ###########################################################################################
-TCEFORM.tt_content.section_frame {
-	removeItems = 1,5,6,10,11,12,20,21
-	addItems.50 = Box
-}
+## Frame Example ###################################################################################
+#TCEFORM.tt_content.section_frame {
+#	removeItems = 1,5,6,10,11,12,20,21
+#	addItems.50 = Box
+#}
 # set in setupTS
 # tt_content.stdWrap.innerWrap.cObject {
 #   50 = TEXT
