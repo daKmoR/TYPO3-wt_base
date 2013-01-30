@@ -45,11 +45,11 @@ menus.nestedList {
 	}
 
 	2 < .1
-	2.wrap = <ul class="lvl2">|</ul>
+	2.wrap = <ul class="lvl2 nav">|</ul>
 	3 < .1
-	3.wrap = <ul class="lvl3">|</ul>
+	3.wrap = <ul class="lvl3 nav">|</ul>
 	4 < .1
-	4.wrap = <ul class="lvl4">|</ul>
+	4.wrap = <ul class="lvl4 nav">|</ul>
 }
 
 menus.nestedListUid < menus.nestedList
