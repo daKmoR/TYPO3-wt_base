@@ -179,9 +179,17 @@ page {
 		20 < .10
 		20.field = uid
 		20.wrap = id="pid|"
-
-		40 = TEXT
-		40.value = >
+		
+		50 = TEXT
+		50.value = class="
+		50.noTrimWrap = | ||
+		
+		90 = TEXT
+		90.value = "
+		90.noTripWrap = || |
+		
+		100 = TEXT
+		100.value = >
 	}
 
 	10 = FLUIDTEMPLATE

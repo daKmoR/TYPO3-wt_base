@@ -1,5 +1,5 @@
 page.bodyTagCObject {
-	30 = TEXT
-	30.value < config.language
-	30.wrap = class="|"
+	80 = TEXT
+	80.value < config.language
+	80.noTrimWrap = || |
 }
