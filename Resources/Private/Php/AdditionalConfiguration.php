@@ -21,8 +21,14 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = '';
 $GLOBALS['TYPO3_CONF_VARS']['BE']['fileCreateMask'] = '0666';
 $GLOBALS['TYPO3_CONF_VARS']['BE']['folderCreateMask'] = '0777';
 
+// upload file size
+$GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'] = '51200';
+
 // change access list mode to explicit Allow
 $GLOBALS['TYPO3_CONF_VARS']['BE']['explicitADmode'] = 'explicitAllow';
+
+// longer Session by default
+$GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = '86400';
 
 // use salted user password hashes
 #$GLOBALS['TYPO3_CONF_VARS']['BE']['loginSecurityLevel'] = 'rsa';
@@ -31,6 +37,7 @@ $GLOBALS['TYPO3_CONF_VARS']['BE']['explicitADmode'] = 'explicitAllow';
 // default image configuration
 $GLOBALS['TYPO3_CONF_VARS']['GFX']['gdlib_png'] = '0';
 $GLOBALS['TYPO3_CONF_VARS']['GFX']['TTFdpi'] = '96';
+$GLOBALS['TYPO3_CONF_VARS']['GFX']['jpg_quality'] = '90';
 $GLOBALS['TYPO3_CONF_VARS']['BE']['disable_exec_function'] = '0';
 
 // do not allow donation window
@@ -56,11 +63,11 @@ if (getenv('TYPO3_CONTEXT') == 'Development') {
 	$GLOBALS['TYPO3_CONF_VARS']['FE']['versionNumberInFilename'] = '';
 	$GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = 'bacb98acf97e0b6112b1d1b650b84971';
 	$GLOBALS['TYPO3_CONF_VARS']['BE']['lockIP'] = '0';
-	$GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = '86400';
 	$GLOBALS['TYPO3_CONF_VARS']['EXT']['extCache'] = '0';
 	$GLOBALS['TYPO3_CONF_VARS']['EXT']['noEdit'] = '0';
 	$GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = '1';
 	$GLOBALS['TYPO3_CONF_VARS']['FE']['disableNoCacheParameter'] = '0';
+	$GLOBALS['TYPO3_CONF_VARS']['FE']['versionNumberInFilename'] = ''; // include css/js with direct link no ?234532 added
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = '1';
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['sqlDebug'] = '0';
 }
