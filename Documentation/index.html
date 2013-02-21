@@ -1,9 +1,9 @@
-<!doctype html>  
+<!doctype html>
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
-    
+
     <title>fdummy</title>
 
     <meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
@@ -11,23 +11,23 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    
+
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
 
     <link rel="stylesheet" href="lib/zenburn.css">
   </head>
-  
+
   <body>
-    
+
     <div id="reveal">
 
       <!-- Used to fade in a background when a specific slide state is reached -->
       <div class="state-background"></div>
-      
+
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
@@ -41,7 +41,7 @@
             if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
           </script>
         </section>
-        
+
         <section>
           <h2>Points</h2>
           <ol>
@@ -52,12 +52,12 @@
             <li><a href="#/6">Deployment with TYPO3.Surf</a></li>
             <li><a href="#/7">For CSS the Twitter BootStrap Framework is used</a></li>
             <li><a href="#/8">MooTools Behaviors</a></li>
-						
+
             <li><a href="#/9">Fluidtemplate replaces Templavoila</a></li>
             <li><a href="#/10">EXT: wt_base [common configuration]</a></li>
           </ol>
         </section>
-				
+
 				<section>
 					<section>
 						<h2>TYPO3 Best Pratice</h2>
@@ -65,23 +65,23 @@
 							<li>EVERY TYPO3 Projects MUST have a
 								<ul>
 									<li>git repository</li>
-									<li>dev version on clients.webteam.at</li>
-									<li>uses TYPO3.Surf deployment from deploy.webteam.at</li>
+									<li>dev version on clients.moodley.at</li>
+									<li>uses TYPO3.Surf deployment from deploy.moodley.at</li>
 								</ul>
 							</li>
 						</ul>
 					</section>
-					
+
 					<section>
 						<h2>TYPO3 Best Pratice</h2>
 						<ul>
 							<li>prefer domain.com over www.domain.com (shorter version)</li>
 							<li>git config core.filemode false</li>
-							<li>beschta.at => beschtaat.clients.webteam.at</li>
+							<li>isi.com => isicom.clients.moodley.at</li>
 						</ul>
 					</section>
         </section>
-				
+
         <section>
           <section>
             <h2>Git submodules</h2>
@@ -103,9 +103,9 @@ $ git rebase
 # you have to update the submodules as they may have changed
 $ git submodule update --init --recursive
             </pre></code>
-            
+
           </section>
-          
+
           <section>
             <h2>TYPO3 Core</h2>
 						<p>update with script</p>
@@ -126,15 +126,15 @@ $ git commit -m 'Raise Submodule Pointer of typo3_src to 4-7-1'
             </pre></code>
           </section>
         </section>
-        
+
         <section>
           <section>
             <h2>Working with fdummy</h2>
             <ol>
               <li>Checkout files</li>
               <li>local host, vhost</li>
-							<li>DEV clients vHost (<a href="https://clients.webteam.at:10000">https://clients.webteam.at:10000</a>)</li>
-							<li>Git repository (<a href="http://git.webteam.at">http://git.webteam.at</a>)</li>
+							<li>DEV clients vHost (<a href="clients.moodley.at:8443">clients.moodley.at:8443</a>)</li>
+							<li>Git repository (<a href="https://github.com/moodley">https://github.com/moodley</a>)</li>
 							<li>Deployment</li>
             <ol>
           </section>
@@ -142,25 +142,25 @@ $ git commit -m 'Raise Submodule Pointer of typo3_src to 4-7-1'
 						<h2>Quickstart</h2>
 						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">$ newTYPO3v6.sh shopCom
 # hosts
-127.0.0.1       local.webteam.at
+127.0.0.1       local.moodley.at
 # Apache vHost
 &lt;VirtualHost *:80&gt;
 	DocumentRoot "path/to/web/root/webteamAt"
-	ServerName local.webteam.at
+	ServerName local.moodley.at
 	SetEnv TYPO3_CONTEXT Development
 &lt;/VirtualHost&gt;
 ## configure host if needed
 $ mv typo3conf/ext/hostconf.php.sample typo3conf/ext/hostconf.php
 $ vi typo3conf/ext/hostconf.php
-## => working local.webteam.at
+## => working local.moodley.at
 
-# create git repository at http://git.webteam.at 
+# create git repository at http://git.moodley.at
 # Name: webteamat
 $ git commit -m '[TASK] Initial Commit'
 $ git push -u origin master
 
-# create clients vHost at https://clients.webteam.at:10000
-# Domain name: webteamat.clients.webteam.at
+# create clients vHost at https://clients.moodley.at:10000
+# Domain name: webteamat.clients.moodley.at
 # PW: xxxxxxxx
 # Change "Server Configuration" -> "Website Options" -> "Website documents sub-directory"
 # from "public_html" to releases/current
@@ -169,7 +169,7 @@ $ git push -u origin master
 $ mv Build/Surf/UseMe.php Build/Surf/webteamatClientsWebteamAt.php
 $ mv Build/Surf/UseMe Build/Surf/webteamatClientsWebteamAt
 # and edit these files with real username, password, path...
-# copy to deploy.clients.webteam.at
+# copy to deploy.clients.moodley.at
 $ mv deploy.sh.sample deployClients.sh
 # adopt deploy name
 # maybe adopt and use pushDb.sh.sample and/or getDb.sh.sample
@@ -187,7 +187,7 @@ $ mv deploy.sh.sample deployClients.sh
             <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
 ## examle for shop.com
 $ cd path/to/webroot
-$ git clone git@git.webteam.at:clients/shopcom.git shopCom
+$ git clone git@git.moodley.at:clients/shopcom.git shopCom
 $ cd shopCom
 $ git submodule update --init --recursive
 ## create needed folders
@@ -204,7 +204,7 @@ $ ln -s typo3_src/t3lib
 $ ln -s typo3_src/index.php
 # change git remote
 $ git remote rename origin fdummy
-$ git remote add origin git@git.webteam.at:clients/$nameLowerCase.git
+$ git remote add origin git@git.moodley.at:clients/$nameLowerCase.git
 ## configure host if needed
 $ mv typo3conf/ext/hostconf.php.sample typo3conf/ext/hostconf.php
 $ vi typo3conf/ext/hostconf.php
@@ -218,11 +218,11 @@ $ vi typo3conf/ext/hostconf.php
 # clones repository recursively
 # create folders, symlinks
 # copies database from fdummy to webteamat
-						</pre></code>						
+						</pre></code>
             <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
-## examle for webteam.at
+## examle for moodley.at
 $ cd path/to/webroot
-$ git clone git@git.webteam.at:webteam-interne-projekte/fdummy.git webteamAt
+$ git clone git@git.moodley.at:webteam-interne-projekte/fdummy.git webteamAt
 $ cd webteamAt
 $ git submodule update --init --recursive
 ## create needed folders
@@ -240,28 +240,28 @@ $ ln -s typo3_src/index.php
 ## configure host if needed
 $ mv typo3conf/ext/hostconf.php.example typo3conf/ext/hostconf.php
 $ vi typo3conf/ext/hostconf.php
-## create git repository at http://git.webteam.at
+## create git repository at http://git.moodley.at
 # change git remote
 $ git remote rename origin fdummy
-$ git remote add origin git@git.webteam.at:clients/$nameLowerCase.git
+$ git remote add origin git@git.moodley.at:clients/$nameLowerCase.git
 $ git push -u origin master
               </code></pre>
           </section>
           <section>
             <h2>Local Server</h2>
 						<p>hosts entry (Linux: /etc/hosts; Windows: Windows\System32\drivers\etc\hosts)</p>
-						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">127.0.0.1       local.webteam.at
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">127.0.0.1       local.moodley.at
 						</pre></code>
 						<p>Apache vHost (httpd-vhost.conf, symlinks available hosts, httpd.conf, ...)</p>
 						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">&lt;VirtualHost *:80&gt;
 	DocumentRoot "path/to/web/root/webteamAt"
-	ServerName local.webteam.at
+	ServerName local.moodley.at
 	SetEnv TYPO3_CONTEXT Development
 &lt;/VirtualHost&gt;
 						</pre></code>
           </section>
         </section>
-				
+
         <section>
           <section>
             <h2>EXT: site_&lt;domain&gt;</h2>
@@ -270,12 +270,12 @@ $ git push -u origin master
             <p>The domain is in lowerCamelCase and before each Uppercase-Letter is a "."</p>
             <p>Examples:</p>
             <ul>
-              <li>site_webteamAt => webteam.at</li>
-              <li>site_clientsWebteamAt => clients.webteam.at</li>
+              <li>site_webteamAt => moodley.at</li>
+              <li>site_clientsWebteamAt => clients.moodley.at</li>
             </ul>
 						<p>if you just have ONE domain you can leave the folder as site_default</p>
           </section>
-          
+
           <section>
             <h2>Templates</h2>
             <p>are in <code>Resources\Private\Templates\Page</code></p>
@@ -302,7 +302,7 @@ $ git push -u origin master
 </div> <!-- /wrap --></xmp></pre>
           </section>
         </section>
-				
+
         <section>
           <section>
             <h2>Deployment Requirements</h2>
@@ -321,7 +321,7 @@ $ git push -u origin master
 							<li>Deployment to Multiple Server</li>
             </ul>
           </section>
-					
+
           <section>
 						<h3>Deployment nice to have</h3>
 						<ul>
@@ -330,7 +330,7 @@ $ git push -u origin master
 							<li>get changes to the system easily for all projects</li>
 						</ul>
           </section>
-				
+
           <section>
             <h2>Deployment with TYPO3.Surf</h2>
             <ul>
@@ -340,11 +340,11 @@ $ git push -u origin master
               <li>Currently supports git or rsync to deploy to the Server</li>
             </ul>
           </section>
-          
+
           <section>
-            <h2>Using deploy.clients.webteam.at</h2>
+            <h2>Using deploy.clients.moodley.at</h2>
             <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
-$ ssh deploy@clients.webteam.at
+$ ssh deploy@clients.moodley.at
 $ cd public_html
 $ ./flow3 surf:deploy webteamAt
 $ ./flow3 surf:deploy webteamatClientsWebteamAt
@@ -355,7 +355,7 @@ $ ./flow3 surf:deploy cdgacatClientsWebteamAt
 $ ./flow3 surf:simulate webteamAt
             </code></pre>
           </section>
-          
+
           <section>
             <h2>Created Structure</h2>
             <pre><code contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -372,7 +372,7 @@ shared/uploads
             </pre></code>
             <p>As you can see the fileadmin must not be in the git repository, only client data is allowed there.</p>
           </section>
-					
+
 					<section>
 						<h2>Example</h2>
 						<pre><xmp>
@@ -380,22 +380,22 @@ shared/uploads
 	$deployment->setWorkflow($workflow);
 
 	$node = new \TYPO3\Surf\Domain\Model\Node('fdummy');
-	$node->setHostname('fdummy.clients.webteam.at');
+	$node->setHostname('fdummy.clients.moodley.at');
 	$node->setOption('username', 'fdummy');
 	$node->setOption('password', 'pwd');
 
 	$application = new \TYPO3\Surf\Application\TYPO3v6();
 	$application->setDeploymentPath('/home/fdummy/public_html');
-	$application->setOption('repositoryUrl', 'git://git.webteam.at/webteam-interne-projekte/fdummy.git');
+	$application->setOption('repositoryUrl', 'git://git.moodley.at/webteam-interne-projekte/fdummy.git');
 	$application->setOption('transferMethod', 'rsync');
 	$application->setOption('keepReleases', 2);
 	$application->addNode($node);
 
-	$deployment->addApplication($application);						
+	$deployment->addApplication($application);
 						</xmp></pre>
           </section>
         </section>
-        
+
         <section>
           <section>
             <h2>CSS BootStrap</h2>
@@ -405,7 +405,7 @@ shared/uploads
             </p>
           </section>
         </section>
-				
+
         <section>
           <section>
             <h2>MooTools Behavior</h2>
@@ -417,7 +417,7 @@ shared/uploads
               <li>with TS in FE</li>
             </ul>
           </section>
-					
+
 					<section>
 						<p>data-behavior="..."</p>
 						<small>used to apply behaviors for an element... </small><br />
@@ -433,7 +433,7 @@ shared/uploads
 						<br /><br />
 						<p>these Behaviors are usually called once on Startup.</p>
 					</section>
-					
+
 					<section>
 						<p>data-trigger="..."</p>
 						<small>These triggers are called usually if the elemet is clicked. It mostly modifies something like</small>
@@ -446,7 +446,7 @@ shared/uploads
 							<li>modify calculate a style of another element</li>
 						</ul>
 					</section>
-					
+
 					<section>
 						<h2>Providing Options</h2>
 						<pre><xmp>
@@ -458,7 +458,7 @@ shared/uploads
 <div data-behavior="myBehavior" data-mybehavior-options="{myoption: 'aString', whatever: [12, 13]}">
 						</xmp></pre>
 					</section>
-          
+
           <section>
             <h2>Fluid Google Maps</h2>
             <pre style="font-size: 12px;"><xmp>
@@ -476,12 +476,12 @@ shared/uploads
 </div>
             </xmp></pre>
           </section>
-          
+
           <section>
             <h2>Fluid Slide</h2>
             <pre style="font-size: 12px;"><xmp>
 {namespace m=Tx_MootoolsEssentials_ViewHelpers}
-          
+
 <m:load file="Slide/Behavior.Slide.Element" />
 <div id="slide">
   <a data-trigger="Slide.next">next</a>
@@ -496,7 +496,7 @@ shared/uploads
             </xmp></pre>
           </section>
         </section>
-        
+
         <section>
           <section>
             <h2>FluidTemplate replaces Templavoila</h2>
@@ -518,7 +518,7 @@ shared/uploads
             <p>{namespace m=Tx_MootoolsEssentials_ViewHelpers}</p>
           </section>
         </section>
-        
+
         <section>
           <section>
             <h2>EXT: wt_base</h2>
@@ -573,9 +573,9 @@ lib.footer = COA
 lib.footer {
   50 < styles.content.get
   50.select.where = colPos = 5
-}            </code></pre>            
+}            </code></pre>
           </section>
-          
+
           <section>
             <h2>Menues</h2>
             <ul style="font-size: 20px; line-height: 1.5;">
@@ -597,7 +597,7 @@ lib.footer {
             </ul>
           </section>
         </section>
-        
+
         <section>
           <h1>THE END</h1>
           <h3 class="inverted">BY Thomas Allmer</h3>
@@ -614,15 +614,15 @@ lib.footer {
 
       <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
       <div class="progress"><span></span></div>
-      
+
     </div>
-    
+
     <script src="js/reveal.js"></script>
 
     <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
     <script src="lib/highlight.js"></script>
     <script src="lib/classList.js"></script>
-    
+
     <script>
       // Parse the query string into a key/value object
       var query = {};
