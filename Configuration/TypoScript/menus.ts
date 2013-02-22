@@ -13,7 +13,6 @@ menus.nestedList {
 	1 = TMENU
 	1 {
 		wrap = <ul class="lvl1 nav">|</ul>
-		noBlur = 1
 
 		NO = 1
 		NO {
@@ -96,7 +95,6 @@ menus.activePath = HMENU
 menus.activePath {
 	1 = TMENU
 	1 {
-		noBlur = 1
 		NO = 1
 		NO {
 			doNotShowLink = 1
@@ -144,7 +142,6 @@ menus.simpleLinks = HMENU
 menus.simpleLinks {
 	1 = TMENU
 	1 {
-		noBlur = 1
 		NO = 1
 		NO {
 			ATagParams = class="first" |*||*| class="last"
@@ -198,7 +195,6 @@ menus.footer {
 	# special.value = 129
 	1 = TMENU
 	1 {
-		noBlur = 1
 		NO.allWrap = | &#xA0; &#124; &#xA0; |*||*| |
 		NO.stdWrap.htmlSpecialChars = 1
 	}
@@ -213,7 +209,6 @@ menus.breadcrumb {
 	special = rootline
 	1 = TMENU
 	1 {
-		noBlur = 1
 		NO.allWrap = | &#xA0; &gt; &#xA0; |*||*| |
 		NO.stdWrap.htmlSpecialChars = 1
 		NO.stdWrap.crop = 40 | ... | 1
@@ -244,7 +239,6 @@ menus.language {
 	special.normalWhenNoLanguage = 0
 	1 = TMENU
 	1 {
-		noBlur = 1
 		# Standard Sprachen
 		NO = 1
 		NO {
@@ -282,7 +276,6 @@ menus.language_switch {
 	special.normalWhenNoLanguage = 0
 	1 = TMENU
 	1 {
-		noBlur = 1
 		# Standard Sprachen
 		NO = 1
 		NO {
@@ -332,7 +325,6 @@ menus.customImageMenu {
 	1 = GMENU
 	1 {
 		wrap = <ul>|</ul>
-		noBlur = 1
 
 		NO = 1
 		NO {

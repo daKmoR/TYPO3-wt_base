@@ -20,8 +20,6 @@ config {
 	locale_all = de_AT.UTF-8
 }
 
-plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
-plugin.tx_pagenotfoundhandler.operator = ODER
 plugin.tx_mootoolsessentials.settings.language = de-DE
 
 ## Anti-Spam #######################################################################################
@@ -100,69 +98,6 @@ tt_content.stdWrap.innerWrap.cObject {
   50.value = <div class="box">|</div>
 }
 
-## Indexed Search ##################################################################################
-page.config {
-	index_enable = 1
-	index_externals = 0
-}
-
-plugin.tx_indexedsearch {
-	search.rootPidList = 1
-	show.advancedSearchLink = 0
-
-	_DEFAULT_PI_VARS.type = 1
-	_DEFAULT_PI_VARS.ext = 1
-
-	show {
-		rules = 0
-		clearSearchBox = 0
-	}
-
-	blind {
-		type = 1
-		defOp = 1
-		sections = 1
-		freeIndexUid = 1
-		media = 1
-		order = 1
-		group = 1
-		lang = 1
-		desc = 1
-		results = 1
-		extResume = 1
-	}
-
-	_DEFAULT_PI_VARS.lang = 0
-	_DEFAULT_PI_VARS.results = 10
-	_CSS_DEFAULT_STYLE >
-}
-
-## pagenotfound_handler ############################################################################
-plugin.tx_pagenotfoundhandler {
-	redirect = 1
-	minRating = 80
-}
-
-## Formular Settings ###############################################################################
-tt_content.mailform.20 {
-	accessibility = 1
-	noWrapAttr = 1
-	formName = mailform
-	dontMd5FieldNames = 1
-	REQ = 1
-	layout = <div>###LABEL### ###FIELD###</div>
-	COMMENT.layout = <div>###LABEL###</div>
-	RADIO.layout = <div>###FIELD###</div>
-	LABEL.layout = <div>###LABEL### ###FIELD###</div>
-	labelWrap.wrap = |
-	commentWrap.wrap = |
-	radioWrap.wrap = |
-	stdWrap.wrap = <fieldset> | </fieldset>
-	params.radio = class="csc-mailform-radio"
-	params.check = class="csc-mailform-check"
-	params.submit = class="csc-mailform-submit"
-}
-
 ## Default page ####################################################################################
 # creates default Page Type rendered with Fluidtemplate
 page = PAGE
@@ -179,15 +114,15 @@ page {
 		20 < .10
 		20.field = uid
 		20.wrap = id="pid|"
-		
+
 		50 = TEXT
 		50.value = class="
 		50.noTrimWrap = | ||
-		
+
 		90 = TEXT
 		90.value = "
 		90.noTripWrap = || |
-		
+
 		100 = TEXT
 		100.value = >
 	}
@@ -256,6 +191,8 @@ lib.footer {
 	50 < styles.content.get
 	50.select.where = colPos = 5
 }
+
+lib.bodyEnd = COA
 
 ## FE display ######################################################################################
 # no Anchors in the FE
