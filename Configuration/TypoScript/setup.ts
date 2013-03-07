@@ -65,8 +65,15 @@ page.meta {
 ## Default CSS #####################################################################################
 page.includeCSS {
 	bootstrap = EXT:wt_base/Resources/Public/Bootstrap/css/bootstrap.css
+	bootstrap.media = screen
 	bootstrapResponsive = EXT:wt_base/Resources/Public/Bootstrap/css/bootstrap-responsive.css
+	bootstrapResponsive.media = screen
+	global = EXT:site_default/Resources/Public/Css/Global.css
+	global.media = all
 	screen = EXT:site_default/Resources/Public/Css/Screen.css
+	screen.media = screen
+	print = EXT:site_default/Resources/Public/Css/Print.css
+	print.media = print
 }
 
 page.headerData {
