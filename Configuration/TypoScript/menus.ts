@@ -268,11 +268,11 @@ menus.language {
 
 ## DropDown Language Menu ###################################################################################
 # Language switch with Dropdown (Select)
-menus.language_switch = HMENU
-menus.language_switch {
+menus.languageSwitch = HMENU
+menus.languageSwitch {
 	wrap = <select id="language">|</select>
 	special = language
-	special.value = 0,1,3
+	special.value = 0,1
 	special.normalWhenNoLanguage = 0
 	1 = TMENU
 	1 {
@@ -291,12 +291,12 @@ menus.language_switch {
 				no_cache = 0
 				returnLast = url
 			}
-			stdWrap.wrap = <option value="|">German</option> || <option value="|">English</option> || <option value="|">Spanisch</option>
+			stdWrap.wrap = <option value="|">German</option> || <option value="|">English</option>
 		}
 		ACT < .NO
 		ACT = 1
 		ACT {
-			stdWrap.wrap = <option selected="selected" value="|">German</option> || <option selected="selected" value="|">English</option> || <option selected="selected" value="|">Spanisch</option>
+			stdWrap.wrap = <option selected="selected" value="|">German</option> || <option selected="selected" value="|">English</option>
 		}
 	}
 }
