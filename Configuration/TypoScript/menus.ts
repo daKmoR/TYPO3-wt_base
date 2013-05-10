@@ -372,60 +372,50 @@ menus.customImageMenu {
 	1.CUR.altImgResource.import.listNum = 2
 }
 
-## JumpMenu ############################################################################################
-# JumpMenu: selectbox
-# <form class="jumpmenu" action="#" method="get">
+## SelectMenu ############################################################################################
+# <form class="selectMenu" action="#" method="get">
 # 	<fieldset>
-# 		<select name="jumpmenu">
+# 		<select name="selectMenu">
 # 			<option value="">bitte ausw&auml;hlen</option>
-# 			<option value="item-1">Item 1</option>
-# 			<option value="item-2">Item 2</option>
+# 			<option value="url/to/item1">Item 1</option>
+# 			<option value="url/to/item2">Item 2</option>
 # 		</select>
 # 	</fieldset>
-menus.jumpMenu = COA
-menus.jumpMenu {
-	10 = COA
+menus.select = COA
+menus.select {
+	wrap = <form class="selectMenu" action="#" method="get"><fieldset><select name="selectMenu">|</select></fieldset></form>
+	10 = TEXT
 	10 {
-		wrap = <form class="jumpmenu" action="#" method="get"><fieldset><select name="jumpmenu">|</select></fieldset></form>
+		wrap = <option value="">|</option>
+		value = bitte ausw&auml;hlen
+		lang.en = please select
+	}
 
-		10 = TEXT
-		10 {
-			wrap = <option value="">|</option>
-
-			value = bitte ausw&auml;hlen
-			lang.en = please select
-		}
-
-		20 = HMENU
-		20 {
-			1 = TMENU
-			1 {
-				NO = 1
-				NO {
-					doNotLinkIt = 1
-					stdWrap.cObject = COA
-					stdWrap.cObject {
-						10 = COA
-						10 {
-							wrap = <option value="|">
-
-							10 = TEXT
-							10.typolink.parameter.field = uid
-							10.typolink.returnLast = url
-						}
-
-						20 = TEXT
-						20 {
-							wrap = |</option>
-
-							field = title
-						}
+	20 = HMENU
+	20 {
+		1 = TMENU
+		1 {
+			NO = 1
+			NO {
+				doNotLinkIt = 1
+				stdWrap.cObject = COA
+				stdWrap.cObject {
+					10 = COA
+					10 {
+						wrap = <option value="|">
+						10 = TEXT
+						10.typolink.parameter.field = uid
+						10.typolink.returnLast = url
+					}
+					20 = TEXT
+					20 {
+						wrap = |</option>
+						field = title
 					}
 				}
-
-				CUR < .NO
-				CUR.stdWrap.cObject.10.wrap = <option value="|" selected="selected">
 			}
+			ACT < .NO
+			ACT.stdWrap.cObject.10.wrap = <option value="|" selected="selected">
 		}
 	}
 }
